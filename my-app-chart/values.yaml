@@ -1,0 +1,20 @@
+replicaCount: 2
+
+image:
+  # The image repository path. This should match your Artifact Registry URL.
+  repository: us-central1-docker.pkg.dev/mando-service-project-1/app-images/my-app
+  pullPolicy: IfNotPresent
+  # The image tag. This will be updated by the CI pipeline to the git commit SHA.
+  tag: "initial-tag"
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
