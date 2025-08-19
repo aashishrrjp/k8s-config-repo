@@ -4,8 +4,8 @@ image:
   # The image repository path. This should match your Artifact Registry URL.
   repository: us-central1-docker.pkg.dev/mando-service-project-1/docker-repo/my-app
   pullPolicy: IfNotPresent
-  # The image tag. This will be updated by the CI pipeline to the git commit SHA.
-  tag: "<latest-image-tag>" # Use the tag from your GitHub Actions build (e.g., commit SHA)
+  # The image tag. Use "latest" to always deploy the newest image.
+  tag: "latest"
 
 service:
   type: ClusterIP
